@@ -23,6 +23,9 @@ resource "aws_s3_bucket" "data" {
 
 resource "aws_s3_bucket" "data_log_bucket" {
   bucket = "data-log-bucket"
+  tags = {
+    yor_trace = "181c1b27-737a-4017-a1ab-e34e2b3605f8 "
+  }
 }
 
 resource "aws_s3_bucket_logging" "data" {
@@ -78,6 +81,9 @@ resource "aws_s3_bucket" "financials" {
 
 resource "aws_s3_bucket" "financials_log_bucket" {
   bucket = "financials-log-bucket"
+  tags = {
+    yor_trace = "181c1b27-737a-4017-a1ab-e34e2b3605f8 "
+  }
 }
 
 resource "aws_s3_bucket_logging" "financials" {
@@ -115,6 +121,9 @@ resource "aws_s3_bucket" "operations" {
 
 resource "aws_s3_bucket" "operations_log_bucket" {
   bucket = "operations-log-bucket"
+  tags = {
+    yor_trace = "181c1b27-737a-4017-a1ab-e34e2b3605f8 "
+  }
 }
 
 resource "aws_s3_bucket_logging" "operations" {
@@ -182,6 +191,9 @@ resource "aws_s3_bucket" "logs" {
 
 resource "aws_s3_bucket" "logs_log_bucket" {
   bucket = "logs-log-bucket"
+  tags = {
+    yor_trace = "181c1b27-737a-4017-a1ab-e34e2b3605f8 "
+  }
 }
 
 resource "aws_s3_bucket_logging" "logs" {
