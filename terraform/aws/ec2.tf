@@ -133,9 +133,9 @@ resource "aws_vpc" "web_vpc" {
 }
 
 resource "aws_subnet" "web_subnet" {
-  vpc_id                  = aws_vpc.web_vpc.id
-  cidr_block              = "172.16.10.0/24"
-  availability_zone       = "${var.region}a"
+  vpc_id            = aws_vpc.web_vpc.id
+  cidr_block        = "172.16.10.0/24"
+  availability_zone = "${var.region}a"
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet"
@@ -152,9 +152,9 @@ resource "aws_subnet" "web_subnet" {
 }
 
 resource "aws_subnet" "web_subnet2" {
-  vpc_id                  = aws_vpc.web_vpc.id
-  cidr_block              = "172.16.11.0/24"
-  availability_zone       = "${var.region}b"
+  vpc_id            = aws_vpc.web_vpc.id
+  cidr_block        = "172.16.11.0/24"
+  availability_zone = "${var.region}b"
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet2"
@@ -288,6 +288,9 @@ resource "aws_s3_bucket" "flowbucket" {
 
 resource "aws_s3_bucket" "flowbucket_log_bucket" {
   bucket = "flowbucket-log-bucket"
+  tags = {
+    yor_trace = "181c1b27-737a-4017-a1ab-e34e2b3605f8 "
+  }
 }
 
 resource "aws_s3_bucket_logging" "flowbucket" {
